@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://cb1qnnsjm5uyd"]
+
+[ext_resource type="Texture2D" uid="uid://cnqgbfrqxf62c" path="res://Assets/Particles/smoke2.png" id="1_jgs3l"]
+[ext_resource type="Script" path="res://Decals/Particle.cs" id="2_xtvjr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3o307"]
+transparency = 1
+albedo_texture = ExtResource("1_jgs3l")
+
+[sub_resource type="QuadMesh" id="QuadMesh_utsvq"]
+lightmap_size_hint = Vector2i(7, 7)
+material = SubResource("StandardMaterial3D_3o307")
+
+[sub_resource type="Curve" id="Curve_vbt03"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Smoke" type="CPUParticles3D"]
+emitting = false
+amount = 16
+lifetime = 0.41
+one_shot = true
+speed_scale = 0.5
+mesh = SubResource("QuadMesh_utsvq")
+direction = Vector3(0, 1, -2.015)
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+damping_min = 0.05
+damping_max = 0.05
+angle_max = 360.0
+scale_amount_curve = SubResource("Curve_vbt03")
+script = ExtResource("2_xtvjr")

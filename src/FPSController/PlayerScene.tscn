@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm7mcq5rrgaxi"]
+
+[ext_resource type="Script" path="res://FPSController/PlayerScript.cs" id="1_w825c"]
+[ext_resource type="Script" path="res://FPSController/AmmoSystem.cs" id="2_3sofi"]
+[ext_resource type="PackedScene" uid="uid://cookhnsjcrpak" path="res://Assets/Weapons/com16.tscn" id="2_xh6i5"]
+[ext_resource type="Script" path="res://Scripts/ExitToMenu.gd" id="3_5y4lv"]
+
+[sub_resource type="CapsuleShape3D" id="1"]
+radius = 0.371158
+height = 2.69565
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ua0ai"]
+bg_color = Color(0, 0, 0, 0.517647)
+
+[node name="Player" type="CharacterBody3D" groups=["Players"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28033, 0)
+script = ExtResource("1_w825c")
+
+[node name="PlayerHead" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.968611, 0)
+
+[node name="PlayerCamera" type="Camera3D" parent="PlayerHead"]
+
+[node name="RayCast3D" type="RayCast3D" parent="PlayerHead"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0414384)
+target_position = Vector3(0, 0, -128)
+collide_with_areas = true
+
+[node name="PlayerHand" type="Marker3D" parent="PlayerHead"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.503971)
+
+[node name="com16" parent="PlayerHead/PlayerHand" instance=ExtResource("2_xh6i5")]
+
+[node name="CollisionBodyCapsule" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0710301, 0)
+shape = SubResource("1")
+
+[node name="AmmoSystem" type="Node" parent="."]
+script = ExtResource("2_3sofi")
+ammo = PackedInt32Array(1024)
+CurrentAmmo = PackedInt32Array(15)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Blink" type="ColorRect" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="State" type="Control" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Message" type="Label" parent="UI/State"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+
+[node name="Panel" type="Panel" parent="UI/State"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ua0ai")
+
+[node name="ExitToMenu" type="Button" parent="UI/State"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 148.0
+offset_right = 192.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit to menu"
+script = ExtResource("3_5y4lv")
+
+[connection signal="pressed" from="UI/State/ExitToMenu" to="UI/State/ExitToMenu" method="_on_pressed"]
