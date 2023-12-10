@@ -47,6 +47,10 @@ public partial class PlayerScript : CharacterBody3D
             InputEventMouseMotion m = (InputEventMouseMotion) @event;
             this.RotateY(Mathf.DegToRad(-m.Relative.X * mouseSensivity.Y / 10));
             playerHead.RotateX(Mathf.Clamp(-m.Relative.Y * mouseSensivity.X / 10, -90, 90));
+
+            Vector3 cameraRot = playerHead.Rotation;
+            cameraRot.X = Mathf.Clamp(playerHead.Rotation.X, Mathf.DegToRad(-85f), Mathf.DegToRad(85f));
+            playerHead.Rotation = cameraRot;
         }
         direction = new Vector3();
         direction.Z = -Input.GetActionStrength("move_forward") + Input.GetActionStrength("move_backward");
@@ -70,7 +74,7 @@ public partial class PlayerScript : CharacterBody3D
         {
             gravityVector += Vector3.Down * gravity * (float)delta;
         }
-        if (Input.IsActionJustPressed("move_jump"))
+        if (Input.IsActionJustPressed("move_jump") && IsOnFloor())
         {
             gravityVector = Vector3.Up * jump;
         }
