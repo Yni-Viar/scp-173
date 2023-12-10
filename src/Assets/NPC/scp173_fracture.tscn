@@ -131,35 +131,35 @@ height = 1.05411
 
 [node name="SCP_173_fracture" type="Node3D"]
 
-[node name="scp173_MESH_cell" type="MeshInstance3D" parent="."]
+[node name="StaticBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0859342, 1.93927, 0.0674217)
+
+[node name="scp173_MESH_cell" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = SubResource("ArrayMesh_u7phe")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="RigidBody3D" parent="scp173_MESH_cell"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="scp173_MESH_cell/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(0.95516, -0.296091, 0, 0.296091, 0.95516, 0, 0, 0, 1, 0.0991044, 0, 0)
 shape = SubResource("CapsuleShape3D_bwc75")
 
-[node name="scp173_MESH_cell_001" type="MeshInstance3D" parent="."]
+[node name="StaticBody3D2" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0305508, 0.628936, -0.0272507)
+
+[node name="scp173_MESH_cell_001" type="MeshInstance3D" parent="StaticBody3D2"]
 mesh = SubResource("ArrayMesh_fsjiu")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="RigidBody3D" parent="scp173_MESH_cell_001"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="scp173_MESH_cell_001/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.165174, 0)
 shape = SubResource("CapsuleShape3D_sfmgd")
 
-[node name="scp173_MESH_cell_002" type="MeshInstance3D" parent="."]
+[node name="StaticBody3D3" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.357532, 1.8749, 0.0302244)
+
+[node name="scp173_MESH_cell_002" type="MeshInstance3D" parent="StaticBody3D3"]
 mesh = SubResource("ArrayMesh_y1hid")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="RigidBody3D" parent="scp173_MESH_cell_002"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="scp173_MESH_cell_002/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3"]
 transform = Transform3D(0.966511, -0.256627, 0, 0.256627, 0.966511, 0, 0, 0, 1, 0.107864, -0.143819, 0)
 shape = SubResource("CapsuleShape3D_hlnr4")
