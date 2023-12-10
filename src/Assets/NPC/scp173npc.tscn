@@ -5317,5 +5317,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0245, 0)
 
 [node name="InteractSound" type="AudioStreamPlayer3D" parent="."]
 
+[node name="DontLookAtMe" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144103, 0.0960684)
+aabb = AABB(-0.52037, -1.44103, -0.52037, 1.04074, 2.88205, 1.04074)
+
 [connection signal="body_entered" from="FindPlayerArea" to="." method="OnFindPlayerAreaBodyEntered"]
 [connection signal="body_exited" from="FindPlayerArea" to="." method="OnFindPlayerAreaBodyExited"]
+[connection signal="screen_entered" from="DontLookAtMe" to="." method="OnDontLookAtMeScreenEntered"]
+[connection signal="screen_exited" from="DontLookAtMe" to="." method="OnDontLookAtMeScreenExited"]

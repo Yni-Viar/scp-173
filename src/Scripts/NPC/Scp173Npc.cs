@@ -85,7 +85,17 @@ public partial class Scp173Npc : CharacterBody3D
 		}
 	}
 
-	void SetRandomFace()
+    private void OnDontLookAtMeScreenEntered()
+    {
+        canMove = false;
+    }
+
+    private void OnDontLookAtMeScreenExited()
+    {
+        canMove = true;
+    }
+
+    void SetRandomFace()
 	{
 		ShaderMaterial mat = new ShaderMaterial();
 		mat.Shader = ResourceLoader.Load<Shader>("res://Shaders/MixShader/mix.gdshader");
