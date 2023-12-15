@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Rattle1.ogg-2511ef83add1c673c43d14a6a7b7f6a3.oggstr"
+
+[deps]
+
+source_file="res://Sounds/Character/173/Rattle1.ogg"
+dest_files=[ "res://.import/Rattle1.ogg-2511ef83add1c673c43d14a6a7b7f6a3.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
