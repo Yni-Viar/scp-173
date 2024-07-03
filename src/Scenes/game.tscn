@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://c22eghed4cxmo"]
+
+[ext_resource type="PackedScene" uid="uid://cu440emlhve1m" path="res://FPSController/PlayerScene.tscn" id="1_4s06m"]
+[ext_resource type="PackedScene" uid="uid://bhc3k2wqukwnb" path="res://Assets/NPC/scp173npc.tscn" id="2_3rihu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7ung5"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xijf7"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vegwk"]
+
+[sub_resource type="Sky" id="Sky_ibrs4"]
+sky_material = SubResource("ProceduralSkyMaterial_vegwk")
+
+[sub_resource type="Environment" id="Environment_1scp2"]
+background_mode = 2
+sky = SubResource("Sky_ibrs4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gpgm"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_58k2y"]
+material = SubResource("StandardMaterial3D_1gpgm")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_go8ru"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Game" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(194.513, 0, 0, 0, 0.177529, 0, 0, 0, 194.423, 0, 0, 0)
+mesh = SubResource("BoxMesh_7ung5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_xijf7")
+
+[node name="Player" parent="." instance=ExtResource("1_4s06m")]
+transform = Transform3D(-0.994758, 0, -0.102254, 0, 1, 0, 0.102254, 0, -0.994758, 0.224028, 1.57061, -25.2759)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1scp2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.106195, 0.994345, 0, -0.994345, 0.106195, 0, 1.25938, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.56258, 0, 0, 0, 4.48056, 0, 0, 0, 11.5048, 0, 2.24541, 0)
+mesh = SubResource("BoxMesh_58k2y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_go8ru")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.33412, 4.09946, 0)
+text = "I will port this demo to OpenGL Compatibility mode
+when Godot 4.3 releases."
+
+[node name="scp173" parent="." instance=ExtResource("2_3rihu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341979, 1.74681, 9.97408)
+
+[node name="GameOverLabel" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "GAME OVER"
