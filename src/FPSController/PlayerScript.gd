@@ -125,4 +125,3 @@ func camera_manager(default_camera: bool):
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		custom_camera = true
-
