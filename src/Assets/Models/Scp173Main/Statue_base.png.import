@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cebha8k6jeu0p"
-path.s3tc="res://.godot/imported/ConcreteStatue_metal-ConcreteStatue_rough.png-d44f574e936a33c6b581eae3932fb8c0.s3tc.ctex"
+uid="uid://dwrrmcvc5xi1k"
+path.s3tc="res://.godot/imported/Statue_base.png-69919d1b876f6bba3eab9eb4be24aa7c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Models/Scp173Main/ConcreteStatue_metal-ConcreteStatue_rough.png"
-dest_files=["res://.godot/imported/ConcreteStatue_metal-ConcreteStatue_rough.png-d44f574e936a33c6b581eae3932fb8c0.s3tc.ctex"]
+source_file="res://Assets/Models/Scp173Main/Statue_base.png"
+dest_files=["res://.godot/imported/Statue_base.png-69919d1b876f6bba3eab9eb4be24aa7c.s3tc.ctex"]
 
 [params]
 

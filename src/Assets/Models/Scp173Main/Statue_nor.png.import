@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pd3ildhsc422"
-path.s3tc="res://.godot/imported/ConcreteStatue_base.png-4ceb27973cefc866ae834c3b1e256b1e.s3tc.ctex"
+uid="uid://d0w6uwg0bu1lh"
+path.s3tc="res://.godot/imported/Statue_nor.png-a5179edcadac84f94f30500e2fdeeaa4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Models/Scp173Main/ConcreteStatue_base.png"
-dest_files=["res://.godot/imported/ConcreteStatue_base.png-4ceb27973cefc866ae834c3b1e256b1e.s3tc.ctex"]
+source_file="res://Assets/Models/Scp173Main/Statue_nor.png"
+dest_files=["res://.godot/imported/Statue_nor.png-a5179edcadac84f94f30500e2fdeeaa4.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Assets/Models/Scp173Main/Statue_nor.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

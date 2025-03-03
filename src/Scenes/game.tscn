@@ -55,11 +55,6 @@ mesh = SubResource("BoxMesh_58k2y")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_go8ru")
 
-[node name="Label3D" type="Label3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.33412, 4.09946, 0)
-text = "I will port this demo to OpenGL Compatibility mode
-when Godot 4.3 releases."
-
 [node name="scp173" parent="." instance=ExtResource("2_3rihu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.341979, 1.74681, 9.97408)
 

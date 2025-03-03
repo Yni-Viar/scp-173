@@ -14,10 +14,12 @@ func _ready():
 func _physics_process(delta):
 	# If is watching, set velocity to zero, else - go to player.
 	if !is_watching:
-		var player_direction: Vector3 = global_position.direction_to(get_tree().root.get_node("Game/Player").global_position)
+		var player_pos = get_tree().root.get_node("Game/Player").global_position
+		var player_direction: Vector3 = global_position.direction_to(player_pos)
 		velocity += speed * player_direction * delta
+		
 		# Look at player
-		look_at(get_tree().root.get_node("Game/Player").global_position)
+		look_at(Vector3(0, player_pos.y, 0))
 	else:
 		velocity = Vector3.ZERO
 	# Necessary for moving
@@ -30,7 +32,7 @@ func _physics_process(delta):
 		var collided_with = check_collision.get_collider()
 		if collided_with is PlayerScript:
 			$InteractSound.play()
-			collided_with.call("health_manage", -16777216)
+			collided_with.call("health_manage", -16777216, 0)
 			# disable statue function
 			set_physics_process(false)
 

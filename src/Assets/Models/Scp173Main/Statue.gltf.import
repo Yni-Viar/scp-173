@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://wlpcwod1a7hi"
-path="res://.godot/imported/Scp173.gltf-1ad68a7b53c49dc31ec10b4856512402.scn"
+uid="uid://h5kqsnyvnqxk"
+path="res://.godot/imported/Statue.gltf-1f441bd97ff3ea7655a26166c103d347.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Scp173Main/Scp173.gltf"
-dest_files=["res://.godot/imported/Scp173.gltf-1ad68a7b53c49dc31ec10b4856512402.scn"]
+source_file="res://Assets/Models/Scp173Main/Statue.gltf"
+dest_files=["res://.godot/imported/Statue.gltf-1f441bd97ff3ea7655a26166c103d347.scn"]
 
 [params]
 
@@ -18,6 +18,7 @@ nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
+nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
 meshes/create_shadow_meshes=true
