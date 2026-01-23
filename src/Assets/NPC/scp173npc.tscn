@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bhc3k2wqukwnb"]
+[gd_scene format=4 uid="uid://bhc3k2wqukwnb"]
 
 [ext_resource type="Script" uid="uid://dlubcc2i534sj" path="res://Scripts/scp173npc.gd" id="1_jqmc8"]
 [ext_resource type="Texture2D" uid="uid://dwrrmcvc5xi1k" path="res://Assets/Models/Scp173Main/Statue_base.png" id="2_84r8n"]
@@ -55,25 +55,25 @@ shadow_mesh = SubResource("ArrayMesh_m3cax")
 radius = 0.513865
 height = 2.69245
 
-[node name="scp173" type="CharacterBody3D"]
+[node name="scp173" type="CharacterBody3D" unique_id=136513366]
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_jqmc8")
 
-[node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.741788, 0)
+[node name="Cube" type="MeshInstance3D" parent="." unique_id=1534509154]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -0.741788, 0)
 mesh = SubResource("ArrayMesh_2au4b")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1598871362]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.324634, 0)
 shape = SubResource("CapsuleShape3D_n0cb2")
 
-[node name="InteractSound" type="AudioStreamPlayer3D" parent="."]
+[node name="InteractSound" type="AudioStreamPlayer3D" parent="." unique_id=1248571926]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.436589, 0)
 max_distance = 17.15
 
-[node name="DontLookAtMe" type="VisibleOnScreenNotifier3D" parent="."]
+[node name="DontLookAtMe" type="VisibleOnScreenNotifier3D" parent="." unique_id=1195810032]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.292486, 0.0960684)
 aabb = AABB(-0.52037, -1.39119, -0.52037, 1.04074, 2.78237, 1.04074)
 
